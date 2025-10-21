@@ -1,68 +1,106 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { ArrowLeft, ShoppingBag, Heart, Settings } from 'lucide-react';
-import { toast } from '@/components/ui/use-toast';
+import { useSearchParams } from 'react-router-dom';
 import PageWrapper from '@/components/PageWrapper';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const UserPanelPage = () => {
-  const navigate = useNavigate();
-
-  const handleClick = (section) => {
-    toast({
-      title: section,
-      description: "🚧 Esta funcionalidad estará disponible próximamente. 🚀",
-    });
-  };
+  const [searchParams] = useSearchParams();
+  const action = searchParams.get('action') || 'profile';
 
   return (
     <PageWrapper>
       <Helmet>
-        <title>Mi Cuenta - SimpleMarket360</title>
-        <meta name="description" content="Gestiona tu cuenta, compras y favoritos en SimpleMarket360" />
+        <title>Panel de Usuario - SimpleMarket360</title>
       </Helmet>
-      <div className="min-h-screen bg-white py-8">
-        <div className="max-w-4xl mx-auto px-4">
-          <button
-            onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-gray-600 hover:text-primary mb-6"
-            aria-label="Volver"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            Volver
-          </button>
-
-          <h1 className="text-3xl font-bold text-primary mb-8">Mi Cuenta</h1>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <button
-              onClick={() => handleClick('Mis Compras')}
-              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow text-left"
-            >
-              <ShoppingBag className="w-8 h-8 text-primary mb-4" />
-              <h2 className="text-xl font-semibold text-primary mb-2">Mis Compras</h2>
-              <p className="text-gray-600 text-sm">Historial de pedidos y seguimiento</p>
-            </button>
-
-            <button
-              onClick={() => handleClick('Favoritos')}
-              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow text-left"
-            >
-              <Heart className="w-8 h-8 text-primary mb-4" />
-              <h2 className="text-xl font-semibold text-primary mb-2">Favoritos</h2>
-              <p className="text-gray-600 text-sm">Productos guardados</p>
-            </button>
-
-            <button
-              onClick={() => handleClick('Configuración')}
-              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow text-left"
-            >
-              <Settings className="w-8 h-8 text-primary mb-4" />
-              <h2 className="text-xl font-semibold text-primary mb-2">Configuración</h2>
-              <p className="text-gray-600 text-sm">Datos personales y preferencias</p>
-            </button>
-          </div>
-        </div>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 className="text-3xl font-bold text-foreground mb-8">Panel de Usuario</h1>
+        <Tabs defaultValue={action} className="w-full">
+          <TabsList className="grid w-full grid-cols-4">
+            <TabsTrigger value="profile">Perfil</TabsTrigger>
+            <TabsTrigger value="publish">Publicar Producto</TabsTrigger>
+            <TabsTrigger value="products">Mis Productos</TabsTrigger>
+            <TabsTrigger value="settings">Ajustes</TabsTrigger>
+          </TabsList>
+          <TabsContent value="profile">
+            <Card>
+              <CardHeader>
+                <CardTitle>Perfil de Usuario</CardTitle>
+                <CardDescription>Información sobre tu cuenta.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Aquí irá la información del perfil del usuario.</p>
+              </CardContent>
+            </Card>
+          </TabsContent>
+          <TabsContent value="publish">
+            <Card>
+              <CardHeader>
+                <CardTitle>Publicar Nuevo Producto</CardTitle>
+                <CardDescription>Rellena el formulario para añadir un nuevo producto a tu tienda.</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <label htmlFor="product-name">Nombre del Producto</label>
+                  <Input id="product-name" placeholder="Ej: Camiseta de algodón" />
+                </div>
+                <div>
+                  <label htmlFor="product-description">Descripción</label>
+                  <Textarea id="product-description" placeholder="Describe tu producto en detalle..." />
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="product-price">Precio</label>
+                    <Input id="product-price" type="number" placeholder="0.00" />
+                  </div>
+                  <div>
+                    <label htmlFor="product-category">Categoría</label>
+                    <Select>
+                      <SelectTrigger id="product-category">
+                        <SelectValue placeholder="Selecciona una categoría" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="electronics">Electrónica</SelectItem>
+                        <SelectItem value="clothing">Ropa</SelectItem>
+                        <SelectItem value="home">Hogar</SelectItem>
+                        <SelectItem value="sports">Deportes</SelectItem>
+                        <SelectItem value="books">Libros</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+                <Button className="w-full btn-primary mt-4">Publicar Producto</Button>
+              </CardContent>
+            </Card>
+          </TabsContent>
+           <TabsContent value="products">
+            <Card>
+              <CardHeader>
+                <CardTitle>Mis Productos</CardTitle>
+                <CardDescription>Gestiona los productos de tu tienda.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Aquí aparecerá la lista de productos del usuario.</p>
+              </CardContent>
+            </Card>
+          </TabsContent>
+          <TabsContent value="settings">
+            <Card>
+              <CardHeader>
+                <CardTitle>Ajustes</CardTitle>
+                <CardDescription>Configura las opciones de tu cuenta.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Aquí irán los ajustes de la cuenta del usuario.</p>
+              </CardContent>
+            </Card>
+          </TabsContent>
+        </Tabs>
       </div>
     </PageWrapper>
   );

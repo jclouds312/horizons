@@ -42,7 +42,9 @@ const Header = ({ cartCount }) => {
             <NavLink to="/categories" className={navLinkClass}>Categorías</NavLink>
             <NavLink to="/sellers" className={navLinkClass}>Vendedores</NavLink>
             <NavLink to="/offers" className={navLinkClass}>Ofertas</NavLink>
-            <Button variant="outline" size="sm">Login</Button>
+            <Link to="/user">
+              <Button variant="outline" size="sm">Login</Button>
+            </Link>
             <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-muted">
               {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
             </button>
@@ -77,7 +79,9 @@ const Header = ({ cartCount }) => {
               <NavLink to="/categories" className={mobileNavLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Categorías</NavLink>
               <NavLink to="/sellers" className={mobileNavLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Vendedores</NavLink>
               <NavLink to="/offers" className={mobileNavLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Ofertas</NavLink>
-              <Button variant="outline" className="w-full mt-2">Login</Button>
+              <Link to="/user" className="w-full block" onClick={() => setIsMobileMenuOpen(false)}>
+                <Button variant="outline" className="w-full mt-2">Login</Button>
+              </Link>
             </div>
              <div className="p-4 border-t">
               <div className="relative w-full">
