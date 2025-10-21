@@ -8,6 +8,7 @@ import PremiumAds from '@/components/PremiumAds';
 import SellerCTA from '@/components/SellerCTA';
 import PageWrapper from '@/components/PageWrapper';
 import ProductCard from '@/components/ProductCard';
+import FAQ from '@/components/FAQ';
 
 const HomePage = ({ categorizedData, sellers, onAddToCart }) => {
   const { categories } = categorizedData;
@@ -57,6 +58,7 @@ const HomePage = ({ categorizedData, sellers, onAddToCart }) => {
         )}
       </main>
 
+      <FAQ />
       <ChatAI />
       <PremiumAds />
       <SellerCTA />

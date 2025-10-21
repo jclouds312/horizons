@@ -1,0 +1,18 @@
+[
+  {
+    "question": "¿Cómo funciona la compra con 1 clic en los live streams?",
+    "answer": "Durante una transmisión en vivo, verás un botón de ‘Comprar ahora’ en los productos destacados. Si tienes tus datos guardados, un solo clic confirmará tu compra instantáneamente."
+  },
+  {
+    "question": "¿Qué es la publicación con IA?",
+    "answer": "Nuestra IA analiza la imagen de tu producto y genera automáticamente un título atractivo, una descripción detallada y etiquetas SEO para maximizar tu visibilidad."
+  },
+  {
+    "question": "¿Es segura la verificación biométrica?",
+    "answer": "Sí, utilizamos tecnología de encriptación avanzada para proteger tus datos biométricos. Este proceso verifica tu identidad para prevenir el fraude y aumentar la confianza en la plataforma."
+  },
+  {
+    "question": "¿Puedo integrar SimpleMarket360 con mi tienda de Shopify?",
+    "answer": "¡Sí! Nuestro Centro de Integraciones te permite conectar fácilmente con plataformas como Shopify, WooCommerce, así como con tu CRM o ERP para sincronizar inventario y pedidos."
+  }
+]

@@ -1,8 +1,12 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { ArrowLeft } from 'lucide-react';
 import PageWrapper from '@/components/PageWrapper';
+import LegalSection from '@/components/LegalSection';
+import ContactCTA from '@/components/ContactCTA';
+import legalSections from '@/data/legal';
 
 const LegalPage = () => {
   const navigate = useNavigate();
@@ -27,50 +31,17 @@ const LegalPage = () => {
           <h1 className="text-3xl font-bold text-primary mb-8">Información Legal</h1>
 
           <div className="space-y-8">
-            <section>
-              <h2 className="text-2xl font-semibold text-primary mb-4">Términos y Condiciones</h2>
-              <div className="prose max-w-none text-gray-600">
-                <p className="mb-4">
-                  Bienvenido a SimpleMarket360. Al utilizar nuestra plataforma, aceptas los siguientes términos y condiciones.
-                </p>
-                <p className="mb-4">
-                  SimpleMarket360 es un marketplace que conecta compradores y vendedores. No somos responsables de las transacciones entre usuarios, pero proporcionamos herramientas de seguridad como verificación biométrica.
-                </p>
-                <p>
-                  Los vendedores son responsables de la calidad y entrega de sus productos. Los compradores tienen derecho a solicitar devoluciones según nuestra política.
-                </p>
-              </div>
-            </section>
+            {legalSections.map(section => (
+              <LegalSection
+                key={section.id}
+                title={section.data.title}
+                content={section.data.content}
+              />
+            ))}
+          </div>
 
-            <section>
-              <h2 className="text-2xl font-semibold text-primary mb-4">Política de Privacidad</h2>
-              <div className="prose max-w-none text-gray-600">
-                <p className="mb-4">
-                  En SimpleMarket360 protegemos tu información personal. Recopilamos datos necesarios para procesar transacciones y mejorar tu experiencia.
-                </p>
-                <p className="mb-4">
-                  Utilizamos verificación biométrica opcional para mayor seguridad. Tus datos biométricos se procesan de forma segura y nunca se comparten con terceros.
-                </p>
-                <p>
-                  Puedes solicitar la eliminación de tus datos en cualquier momento contactando a nuestro equipo de soporte.
-                </p>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold text-primary mb-4">Devoluciones y Disputas</h2>
-              <div className="prose max-w-none text-gray-600">
-                <p className="mb-4">
-                  Los compradores tienen 30 días para solicitar devoluciones de productos que no cumplan con la descripción o lleguen defectuosos.
-                </p>
-                <p className="mb-4">
-                  Para iniciar una devolución, contacta al vendedor a través de nuestro sistema de mensajería. Si no hay respuesta en 48 horas, puedes abrir una disputa.
-                </p>
-                <p>
-                  Nuestro equipo de mediación revisará cada caso y tomará una decisión justa basada en la evidencia proporcionada por ambas partes.
-                </p>
-              </div>
-            </section>
+          <div className="mt-12">
+            <ContactCTA />
           </div>
         </div>
       </div>

@@ -1,35 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from '@/components/ui/use-toast';
-
-const slides = [{
-  id: 1,
-  title: 'Vende en vivo y en grande',
-  subtitle: 'Compra en 1 clic durante el vivo',
-  image: 'Live streaming commerce platform with interactive shopping'
-}, {
-  id: 2,
-  title: 'Publicaciones con IA',
-  subtitle: 'Títulos y SEO automáticos',
-  image: 'AI-powered product listing automation interface'
-}, {
-  id: 3,
-  title: 'Verificación biométrica',
-  subtitle: 'Más confianza, menos fraude',
-  image: 'Biometric verification security system for e-commerce'
-}, {
-  id: 4,
-  title: 'Centro de Integraciones',
-  subtitle: 'Conecta tu e-commerce/CRM/ERP',
-  image: 'Integration hub connecting multiple business systems'
-}, {
-  id: 5,
-  title: 'Ads y Monetización',
-  subtitle: 'Banners, boosts y planes premium',
-  image: 'Advertising and monetization dashboard for sellers'
-}];
+import slides from '@/data/heroSlides.json';
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

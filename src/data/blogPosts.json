@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Cómo empezar a vender en vivo con SimpleMarket360",
+    "summary": "Descubre los pasos para configurar tu primera transmisión en vivo y conectar con tus clientes en tiempo real.",
+    "author": "Equipo de SimpleMarket360",
+    "date": "2024-07-20"
+  },
+  {
+    "id": 2,
+    "title": "La IA y el futuro del e-commerce: más allá de las descripciones automáticas",
+    "summary": "Exploramos cómo la inteligencia artificial está transformando la forma en que vendemos online, desde el SEO hasta la personalización.",
+    "author": "Analista de IA",
+    "date": "2024-07-18"
+  },
+  {
+    "id": 3,
+    "title": "Seguridad en el marketplace: por qué la verificación biométrica es un cambio de juego",
+    "summary": "Un análisis profundo sobre cómo la verificación de identidad avanzada reduce el fraude y aumenta la confianza entre compradores y vendedores.",
+    "author": "Experto en Seguridad",
+    "date": "2024-07-15"
+  }
+]
