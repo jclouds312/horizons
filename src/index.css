@@ -69,6 +69,16 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
   }
+  
+  button, [role="button"] {
+      @apply transition-all duration-200 ease-in-out;
+  }
+  button:hover, [role="button"]:hover {
+      @apply transform scale-[1.03];
+  }
+  button:active, [role="button"]:active {
+      @apply transform scale-[0.98];
+  }
 }
 
 @layer components {

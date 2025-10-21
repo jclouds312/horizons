@@ -1,18 +1,31 @@
 import React from 'react';
-import ProductCard from '../components/ProductCard';
+import { Helmet } from 'react-helmet';
+import PageWrapper from '@/components/PageWrapper';
 
-const OffersPage = ({ products, onAddToCart }) => {
-  const offerProducts = products.filter(product => product.offer_price);
-
+const OffersPage = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8 text-center">Ofertas Especiales</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {offerProducts.map(product => (
-          <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
-        ))}
+    <PageWrapper>
+      <Helmet>
+        <title>Ofertas Especiales - SimpleMarket360</title>
+        <meta name="description" content="Encuentra las mejores ofertas y descuentos en una amplia variedad de productos." />
+      </Helmet>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center">
+          <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
+            Ofertas Especiales
+          </h1>
+          <p className="mt-4 text-xl text-muted-foreground">
+            ¡Grandes descuentos en tus productos favoritos por tiempo limitado!
+          </p>
+          <hr className="mt-6 w-48 mx-auto" />
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-muted-foreground">No hay ofertas especiales en este momento. ¡Vuelve pronto!</p>
+          {/* Aca se mostraran las ofertas cuando esten disponibles */}
+        </div>
       </div>
-    </div>
+    </PageWrapper>
   );
 };
 
