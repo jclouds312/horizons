@@ -3,12 +3,12 @@ import { Helmet } from 'react-helmet';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import PageWrapper from '@/components/PageWrapper';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs.jsx"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { useToast } from "@/components/ui/use-toast"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card.jsx"
+import { Button } from '@/components/ui/button.jsx';
+import { Input } from '@/components/ui/input.jsx';
+import { Textarea } from '@/components/ui/textarea.jsx';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select.jsx';
+import { useToast } from "@/components/ui/use-toast.jsx"
 import ProductCard from '@/components/ProductCard';
 
 // --- Componente para usuarios no autenticados (Login/Registro) ---
