@@ -20,6 +20,7 @@ import ContactPage from '@/pages/ContactPage';
 import AdBanner from '@/components/AdBanner';
 import StickyAd from '@/components/StickyAd';
 import { useAds } from '@/hooks/useAds';
+import { useTheme } from '@/hooks/useTheme';
 import categorizeProducts from '@/lib/categorizer';
 
 function AppContent() {
@@ -31,6 +32,7 @@ function AppContent() {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
+  const { theme, toggleTheme } = useTheme();
   const { config: adsConfig, getSlot, setOverrides } = useAds();
 
   const categorizedProducts = useMemo(() => {
@@ -105,8 +107,8 @@ function AppContent() {
   const stickyFooterSlot = getSlot('ad-sticky-footer');
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
-      <Header cartCount={cartCount} />
+    <div className={`min-h-screen flex flex-col ${theme}`}>
+      <Header cartCount={cartCount} toggleTheme={toggleTheme} theme={theme} />
       <main className="pt-32 flex-grow">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>

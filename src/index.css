@@ -1,61 +1,58 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --sm-bg: #ffffff;
-    --sm-text: #111827;
-    --sm-muted: #6B7280;
-    --sm-border: #E5E7EB;
+    --background: hsl(0 0% 100%);
+    --foreground: hsl(222.2 47.4% 11.2%);
+    --card: hsl(0 0% 100%);
+    --card-foreground: hsl(222.2 47.4% 11.2%);
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(222.2 47.4% 11.2%);
+    --primary: hsl(222.2 47.4% 11.2%);
+    --primary-foreground: hsl(210 40% 98%);
+    --secondary: hsl(330 80% 50%);
+    --secondary-foreground: hsl(210 40% 98%);
+    --muted: hsl(210 40% 96.1%);
+    --muted-foreground: hsl(215.4 16.3% 46.9%);
+    --accent: hsl(260 70% 50%);
+    --accent-foreground: hsl(210 40% 98%);
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: hsl(210 40% 98%);
+    --border: hsl(214.3 31.8% 91.4%);
+    --input: hsl(214.3 31.8% 91.4%);
+    --ring: hsl(260 70% 50%);
+    --radius: 0.75rem;
+
     --sm-pink: #FF007F;
     --sm-violet: #8A2BE2;
     --sm-orange: #FF4500;
     --sm-grad: linear-gradient(90deg, var(--sm-pink), var(--sm-violet), var(--sm-orange));
     --sm-grad-45: linear-gradient(45deg, var(--sm-pink), var(--sm-violet), var(--sm-orange));
-
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 330 80% 50%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: var(--sm-violet);
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: var(--sm-violet);
-    --radius: 0.75rem;
   }
 
   .dark {
-    --background: 222.2 47.4% 11.2%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 47.4% 11.2%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 47.4% 11.2%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 330 80% 50%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 330 80% 50%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: var(--sm-violet);
+    --background: hsl(222.2 47.4% 11.2%);
+    --foreground: hsl(210 40% 98%);
+    --card: hsl(222.2 47.4% 11.2%);
+    --card-foreground: hsl(210 40% 98%);
+    --popover: hsl(222.2 47.4% 11.2%);
+    --popover-foreground: hsl(210 40% 98%);
+    --primary: hsl(210 40% 98%);
+    --primary-foreground: hsl(222.2 47.4% 11.2%);
+    --secondary: hsl(330 80% 50%);
+    --secondary-foreground: hsl(210 40% 98%);
+    --muted: hsl(217.2 32.6% 17.5%);
+    --muted-foreground: hsl(215 20.2% 65.1%);
+    --accent: hsl(260 70% 60%);
+    --accent-foreground: hsl(210 40% 98%);
+    --destructive: hsl(0 62.8% 30.6%);
+    --destructive-foreground: hsl(210 40% 98%);
+    --border: hsl(217.2 32.6% 17.5%);
+    --input: hsl(217.2 32.6% 17.5%);
+    --ring: hsl(260 70% 60%);
   }
 }
 
@@ -65,40 +62,35 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: 'Inter', sans-serif;
   }
-  .brand-divider {
-    height: 4px;
-    background: var(--sm-grad);
-    border-radius: 4px;
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
   }
 }
 
 @layer components {
-  .btn {
-    @apply inline-flex items-center justify-center rounded-xl font-semibold transition border focus:outline-none focus:ring-2 focus:ring-offset-2;
-    --tw-ring-color: var(--sm-violet);
-  }
   .btn-primary {
     background-image: var(--sm-grad);
-    @apply text-white border-transparent px-4 py-2;
+    @apply text-white;
   }
   .btn-primary:hover {
-    filter: brightness(1.05);
-    transform: translateY(-1px);
+    filter: brightness(1.1);
   }
-  .btn-outline {
-    @apply bg-white text-gray-900 border-gray-200 px-4 py-2;
-  }
-  .btn-outline:hover {
-    @apply bg-gray-50;
+  
+  .card {
+    @apply rounded-lg border bg-card text-card-foreground shadow-sm;
   }
 }
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');

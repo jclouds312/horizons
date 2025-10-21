@@ -1,32 +1,27 @@
 [
   {
-    "id": 1,
-    "title": "Vende en vivo y en grande",
-    "subtitle": "Compra en 1 clic durante el vivo",
-    "image": "Live streaming commerce platform with interactive shopping"
+    "title": "Bienvenido a SimpleMarket360",
+    "subtitle": "Tu marketplace para comprar y vender de todo, de forma fácil y segura.",
+    "image": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
   },
   {
-    "id": 2,
-    "title": "Publicaciones con IA",
-    "subtitle": "Títulos y SEO automáticos",
-    "image": "AI-powered product listing automation interface"
+    "title": "Vende tus productos en minutos",
+    "subtitle": "Publica tus artículos con la ayuda de nuestra IA y llega a miles de compradores.",
+    "image": "https://images.unsplash.com/photo-1579548122204-782e1b0a1a8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
   },
   {
-    "id": 3,
-    "title": "Verificación biométrica",
-    "subtitle": "Más confianza, menos fraude",
-    "image": "Biometric verification security system for e-commerce"
+    "title": "Descubre ofertas increíbles",
+    "subtitle": "Encuentra productos únicos y a los mejores precios, todos los días.",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
   },
   {
-    "id": 4,
-    "title": "Centro de Integraciones",
-    "subtitle": "Conecta tu e-commerce/CRM/ERP",
-    "image": "Integration hub connecting multiple business systems"
+    "title": "Compra con confianza",
+    "subtitle": "Verificación biométrica y pasarela de pagos segura para tu tranquilidad.",
+    "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
   },
   {
-    "id": 5,
-    "title": "Ads y Monetización",
-    "subtitle": "Banners, boosts y planes premium",
-    "image": "Advertising and monetization dashboard for sellers"
+    "title": "Únete a la comunidad LiveHopp",
+    "subtitle": "Interactúa con vendedores y compradores en tiempo real.",
+    "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
   }
 ]

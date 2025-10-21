@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
@@ -9,6 +10,8 @@ import SellerCTA from '@/components/SellerCTA';
 import PageWrapper from '@/components/PageWrapper';
 import ProductCard from '@/components/ProductCard';
 import FAQ from '@/components/FAQ';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 
 const HomePage = ({ categorizedData, sellers, onAddToCart }) => {
   const { categories } = categorizedData;
@@ -20,12 +23,25 @@ const HomePage = ({ categorizedData, sellers, onAddToCart }) => {
         <meta name="description" content="Compra y vende en vivo con LiveHopp. Marketplace con verificación biométrica, IA para publicaciones y centro de integraciones. Rápido, seguro y mobile-first." />
       </Helmet>
       
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-20 focus:left-4 focus:z-50 focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-20 focus:left-4 focus:z-50 bg-primary text-primary-foreground px-4 py-2 rounded-md">
         Saltar a contenido principal
       </a>
 
       <HeroSlider />
       
+      <div className="my-12 text-center">
+        <Link to="/categories">
+          <Button size="lg" className="mr-4">
+            Explorar Marketplace <ArrowRight className="ml-2"/>
+          </Button>
+        </Link>
+        <Link to="/user?action=publish">
+          <Button size="lg" variant="secondary">
+            Publicar Producto
+          </Button>
+        </Link>
+      </div>
+
       <div className="my-8">
         <PremiumAds />
       </div>
@@ -38,8 +54,8 @@ const HomePage = ({ categorizedData, sellers, onAddToCart }) => {
             category.items.length > 0 && (
               <section key={category.slug} id={category.slug} className="py-12">
                 <div className="flex justify-between items-baseline mb-6">
-                  <h2 className="text-3xl font-bold text-gray-900">{category.name}</h2>
-                  <Link to={`/categories#${category.slug}`} className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                  <h2 className="text-3xl font-bold">{category.name}</h2>
+                  <Link to={`/categories#${category.slug}`} className="text-sm font-medium text-primary hover:underline">
                     Ver todos ({category.count})
                   </Link>
                 </div>
@@ -53,7 +69,7 @@ const HomePage = ({ categorizedData, sellers, onAddToCart }) => {
           ))
         ) : (
           <div className="text-center py-16">
-            <p className="text-gray-500">Cargando productos...</p>
+            <p className="text-muted-foreground">Cargando productos...</p>
           </div>
         )}
       </main>
