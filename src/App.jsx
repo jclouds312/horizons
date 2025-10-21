@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -17,20 +17,10 @@ import CategoriesPage from '@/pages/CategoriesPage';
 import OffersPage from '@/pages/OffersPage';
 import SellersPage from '@/pages/SellersPage';
 import ContactPage from '@/pages/ContactPage';
-import LoginPage from '@/pages/LoginPage';
-import AdminPage from '@/pages/AdminPage';
 import AdBanner from '@/components/AdBanner';
 import StickyAd from '@/components/StickyAd';
 import { useAds } from '@/hooks/useAds';
 import categorizeProducts from '@/lib/categorizer';
-
-// AdminRoute component to protect admin panel
-const AdminRoute = ({ user, children }) => {
-  if (!user || user.role !== 'admin') {
-    return <Navigate to="/" replace />;
-  }
-  return children;
-};
 
 function AppContent() {
   const location = useLocation();
@@ -41,17 +31,6 @@ function AppContent() {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
-  // State to manage the currently logged-in user
-  const [currentUser, setCurrentUser] = useState(() => {
-    try {
-      const savedUser = sessionStorage.getItem('currentUser');
-      return savedUser ? JSON.parse(savedUser) : null;
-    } catch (error) {
-      console.error("Failed to parse user from sessionStorage", error);
-      return null;
-    }
-  });
-
   const { config: adsConfig, getSlot, setOverrides } = useAds();
 
   const categorizedProducts = useMemo(() => {
@@ -60,18 +39,6 @@ function AppContent() {
     }
     return { categories: [], uncategorized: [], totals: { all: 0, byCategory: {} } };
   }, [products]);
-
-  // Login handler
-  const handleLogin = (user) => {
-    setCurrentUser(user);
-    sessionStorage.setItem('currentUser', JSON.stringify(user));
-  };
-
-  // Logout handler
-  const handleLogout = () => {
-    setCurrentUser(null);
-    sessionStorage.removeItem('currentUser');
-  };
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -139,7 +106,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <Header cartCount={cartCount} user={currentUser} onLogout={handleLogout} />
+      <Header cartCount={cartCount} />
       <main className="pt-32 flex-grow">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
@@ -155,17 +122,6 @@ function AppContent() {
             <Route path="/offers" element={<OffersPage />} />
             <Route path="/sellers" element={<SellersPage sellers={sellers} />} />
             <Route path="/contact" element={<ContactPage />} />
-
-            {/* Auth Routes */}
-            <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
-            <Route 
-              path="/admin" 
-              element={
-                <AdminRoute user={currentUser}>
-                  <AdminPage />
-                </AdminRoute>
-              } 
-            />
           </Routes>
         </AnimatePresence>
       </main>
@@ -181,7 +137,6 @@ function AppContent() {
   );
 }
 
-// The main App component wraps everything in the Router
 function App() {
   return (
     <Router>

@@ -1,18 +1,12 @@
 
 import React, { useState } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { Search, ShoppingCart, User, Menu, X, LogIn, LogOut, Shield } from 'lucide-react';
+import { Link, NavLink } from 'react-router-dom';
+import { Search, ShoppingCart, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const Header = ({ cartCount, user, onLogout }) => {
+const Header = ({ cartCount }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    onLogout();
-    setIsMobileMenuOpen(false);
-    navigate('/'); // Redirect to home after logout
-  };
 
   const navLinkClass = ({ isActive }) => 
     `text-sm font-medium transition-colors ${isActive ? 'text-primary' : 'text-gray-600 hover:text-primary'}`;
@@ -40,37 +34,15 @@ const Header = ({ cartCount, user, onLogout }) => {
             </div>
           </div>
 
-          {/* Nav Links & Auth (Desktop) */}
+          {/* Nav Links (Desktop) */}
           <nav className="hidden lg:flex space-x-6 items-center">
             <NavLink to="/" className={navLinkClass}>Inicio</NavLink>
             <NavLink to="/categories" className={navLinkClass}>Categorías</NavLink>
             <NavLink to="/sellers" className={navLinkClass}>Vendedores</NavLink>
-            {user && user.role === 'admin' && (
-              <NavLink to="/admin" className={navLinkClass}><Shield size={16} className="inline mr-1"/>Admin</NavLink>
-            )}
-            
-            <div className="flex items-center space-x-4">
-              {user ? (
-                <div className="flex items-center space-x-3">
-                  <span className="text-sm font-medium text-gray-700">Hola, {user.name.split(' ')[0]}</span>
-                  <Button variant="outline" size="sm" onClick={handleLogout} className="flex items-center gap-1.5">
-                    <LogOut size={16}/>
-                    Salir
-                  </Button>
-                </div>
-              ) : (
-                <Button asChild variant="ghost" size="sm">
-                  <Link to="/login" className="flex items-center gap-1.5">
-                    <LogIn size={16}/>
-                    Entrar
-                  </Link>
-                </Button>
-              )}
-              <Link to="/cart" aria-label="Carrito" className="relative p-2 rounded-full hover:bg-gray-100 transition-colors">
-                <ShoppingCart className="h-5 w-5 text-gray-600" />
-                {cartCount > 0 && <span className="absolute -top-1 -right-1 bg-accent text-white text-xs font-bold rounded-full h-4 w-4 flex items-center justify-center">{cartCount}</span>}
-              </Link>
-            </div>
+            <Link to="/cart" aria-label="Carrito" className="relative p-2 rounded-full hover:bg-gray-100 transition-colors">
+              <ShoppingCart className="h-5 w-5 text-gray-600" />
+              {cartCount > 0 && <span className="absolute -top-1 -right-1 bg-accent text-white text-xs font-bold rounded-full h-4 w-4 flex items-center justify-center">{cartCount}</span>}
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -94,23 +66,6 @@ const Header = ({ cartCount, user, onLogout }) => {
               <NavLink to="/" className={mobileNavLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Inicio</NavLink>
               <NavLink to="/categories" className={mobileNavLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Categorías</NavLink>
               <NavLink to="/sellers" className={mobileNavLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Vendedores</NavLink>
-              {user && user.role === 'admin' && (
-                <NavLink to="/admin" className={mobileNavLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Panel Admin</NavLink>
-              )}
-            </div>
-            <div className="border-t border-gray-200 pt-4 pb-3">
-              {user ? (
-                <div className="px-5 flex flex-col space-y-3">
-                   <p className="font-medium text-gray-800">Hola, {user.name}</p>
-                  <Button variant="outline" onClick={handleLogout}>Cerrar Sesión</Button>
-                </div>
-              ) : (
-                <div className="px-5">
-                  <Button asChild className="w-full">
-                    <Link to="/login" onClick={() => setIsMobileMenuOpen(false)}>Iniciar Sesión</Link>
-                  </Button>
-                </div>
-              )}
             </div>
              <div className="lg:hidden p-4 border-t border-gray-200">
               <div className="relative w-full">
