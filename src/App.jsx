@@ -119,7 +119,7 @@ function AppContent() {
             <Route path="/legal" element={<LegalPage />} />
             <Route path="/live/:id" element={<LivePlayerPage sellers={sellers} products={products} onAddToCart={handleAddToCart} />} />
             <Route path="/categories" element={<CategoriesPage categorizedData={categorizedProducts} onAddToCart={handleAddToCart} />} />
-            <Route path="/offers" element={<OffersPage />} />
+            <Route path="/offers" element={<OffersPage products={products} onAddToCart={handleAddToCart} />} />
             <Route path="/sellers" element={<SellersPage sellers={sellers} />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>

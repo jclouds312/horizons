@@ -39,6 +39,7 @@ const Header = ({ cartCount }) => {
             <NavLink to="/" className={navLinkClass}>Inicio</NavLink>
             <NavLink to="/categories" className={navLinkClass}>Categorías</NavLink>
             <NavLink to="/sellers" className={navLinkClass}>Vendedores</NavLink>
+            <NavLink to="/offers" className={navLinkClass}>Ofertas</NavLink>
             <Link to="/cart" aria-label="Carrito" className="relative p-2 rounded-full hover:bg-gray-100 transition-colors">
               <ShoppingCart className="h-5 w-5 text-gray-600" />
               {cartCount > 0 && <span className="absolute -top-1 -right-1 bg-accent text-white text-xs font-bold rounded-full h-4 w-4 flex items-center justify-center">{cartCount}</span>}
@@ -66,6 +67,7 @@ const Header = ({ cartCount }) => {
               <NavLink to="/" className={mobileNavLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Inicio</NavLink>
               <NavLink to="/categories" className={mobileNavLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Categorías</NavLink>
               <NavLink to="/sellers" className={mobileNavLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Vendedores</NavLink>
+              <NavLink to="/offers" className={mobileNavLinkClass} onClick={() => setIsMobileMenuOpen(false)}>Ofertas</NavLink>
             </div>
              <div className="lg:hidden p-4 border-t border-gray-200">
               <div className="relative w-full">

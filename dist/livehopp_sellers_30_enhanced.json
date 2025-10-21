@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "name": "TechGuru",
+    "handle": "@techguru",
+    "avatar": "https://images.unsplash.com/photo-1553728440-c29442731627",
+    "thumbnail": "https://images.unsplash.com/photo-1648554090883-d23dbcf203a1",
+    "viewers": 4890,
+    "category": "Electro",
+    "featuredProduct": { "name": "Smartwatch S9", "price": 229 },
+    "player": { "embed_type": "iframe", "embed_src": "https://customer-7z5h3j55w144t2x2.cloudflarestream.com/4e9e51704d9c4902a288c80153f31317/iframe" }
+  },
+  {
+    "id": 2,
+    "name": "FashionForward",
+    "handle": "@fashionfwd",
+    "avatar": "https://images.unsplash.com/photo-1581044777550-4cfa6ce247aa",
+    "thumbnail": "https://images.unsplash.com/photo-1549298916-b41d501d3772",
+    "viewers": 3250,
+    "category": "Moda",
+    "featuredProduct": { "name": "Zapatillas Urban X", "price": 89 },
+    "player": { "embed_type": "mux", "embed_src": "https://stream.mux.com/v69RSHhFelSm4701prP29d02V8A01l01c1g/low.m3u8" }
+  },
+  {
+    "id": 3,
+    "name": "HomeSweetHome",
+    "handle": "@homesweethome",
+    "avatar": "https://images.unsplash.com/photo-1618221195710-dd6b41fa2047",
+    "thumbnail": "https://images.unsplash.com/photo-1556020685-ae41abfc9365",
+    "viewers": 2100,
+    "category": "Hogar",
+    "featuredProduct": { "name": "Cafetera Express", "price": 159 },
+    "player": { "embed_type": "iframe", "embed_src": "https://customer-7z5h3j55w144t2x2.cloudflarestream.com/4e9e51704d9c4902a288c80153f31317/iframe" }
+  },
+  {
+    "id": 4, "name": "GamerZone", "handle": "@gamerzone", "avatar": "https://images.unsplash.com/photo-1555861496-0666c8981751", "thumbnail": "https://images.unsplash.com/photo-1542751371-adc38448a05e", "viewers": 4120, "category": "Gaming", "featuredProduct": { "name": "Silla Gamer", "price": 249 }, "player": { "embed_type": "mux", "embed_src": "https://stream.mux.com/v69RSHhFelSm4701prP29d02V8A01l01c1g/low.m3u8" }
+  },
+  {
+    "id": 5, "name": "BeautyBloom", "handle": "@beautybloom", "avatar": "https://images.unsplash.com/photo-1596495768562-333149020963", "thumbnail": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908", "viewers": 1800, "category": "Belleza", "featuredProduct": { "name": "Set de Maquillaje", "price": 49 }, "player": { "embed_type": "iframe", "embed_src": "https://customer-7z5h3j55w144t2x2.cloudflarestream.com/4e9e51704d9c4902a288c80153f31317/iframe" }
+  },
+  {
+    "id": 6, "name": "GadgetGeek", "handle": "@gadgetgeek", "avatar": "https://images.unsplash.com/photo-1593344484962-796b55d95392", "thumbnail": "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d", "viewers": 3900, "category": "Electro", "featuredProduct": { "name": "Auriculares Pro Max", "price": 299 }, "player": { "embed_type": "mux", "embed_src": "https://stream.mux.com/v69RSHhFelSm4701prP29d02V8A01l01c1g/low.m3u8" }
+  },
+  {
+    "id": 7, "name": "SportyLife", "handle": "@sportylife", "avatar": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438", "thumbnail": "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5", "viewers": 2750, "category": "Deportes", "featuredProduct": { "name": "Mancuernas Ajustables", "price": 120 }, "player": { "embed_type": "iframe", "embed_src": "https://customer-7z5h3j55w144t2x2.cloudflarestream.com/4e9e51704d9c4anpm run dev288c80153f31317/iframe" }
+  },
+  {
+    "id": 8, "name": "CineMagic", "handle": "@cinemagic", "avatar": "https://images.unsplash.com/photo-1536440136628-849c177e76a1", "thumbnail": "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85", "viewers": 3300, "category": "Electro", "featuredProduct": { "name": "Proyector 4K", "price": 699 }, "player": { "embed_type": "mux", "embed_src": "https://stream.mux.com/v69RSHhFelSm4701prP29d02V8A01l01c1g/low.m3u8" }
+  },
+  {
+    "id": 9, "name": "StyleStreet", "handle": "@stylestreet", "avatar": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1", "thumbnail": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d", "viewers": 2900, "category": "Moda", "featuredProduct": { "name": "Chaqueta de Cuero", "price": 180 }, "player": { "embed_type": "iframe", "embed_src": "https://customer-7z5h3j55w144t2x2.cloudflarestream.com/4e9e51704d9c4902a288c80153f31317/iframe" }
+  },
+  {
+    "id": 10, "name": "DecoDreams", "handle": "@decodreams", "avatar": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267", "thumbnail": "https://images.unsplash.com/photo-1616046229478-9901c5536a45", "viewers": 1500, "category": "Hogar", "featuredProduct": { "name": "Lámpara Minimal", "price": 39 }, "player": { "embed_type": "mux", "embed_src": "https://stream.mux.com/v69RSHhFelSm4701prP29d02V8A01l01c1g/low.m3u8" }
+  },
+  { "id": 11, "name":"Seller11","handle":"@seller11","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":1234,"category":"Electro","featuredProduct":{"name":"Product A","price":100},"player":{"embed_type":"iframe","embed_src":"https://customer-7z5h3j55w144t2x2.cloudflarestream.com/4e9e51704d9c4902a288c80153f31317/iframe"}},
+  { "id": 12, "name":"Seller12","handle":"@seller12","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":2345,"category":"Moda","featuredProduct":{"name":"Product B","price":150},"player":{"embed_type":"mux","embed_src":"https://stream.mux.com/v69RSHhFelSm4701prP29d02V8A01l01c1g/low.m3u8"}},
+  { "id": 13, "name":"Seller13","handle":"@seller13","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":3456,"category":"Hogar","featuredProduct":{"name":"Product C","price":200},"player":{"embed_type":"iframe","embed_src":"https://customer-7z5h3j55w144t2x2.cloudflarestream.com/4e9e51704d9c4902a288c80153f31317/iframe"}},
+  { "id": 14, "name":"Seller14","handle":"@seller14","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":4567,"category":"Deportes","featuredProduct":{"name":"Product D","price":250},"player":{"embed_type":"mux","embed_src":"https://stream.mux.com/v69RSHhFelSm4701prP29d02V8A01l01c1g/low.m3u8"}},
+  { "id": 15, "name":"Seller15","handle":"@seller15","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":5678,"category":"Belleza","featuredProduct":{"name":"Product E","price":300},"player":{"embed_type":"iframe","embed_src":"https://customer-7z5h3j55w144t2x2.cloudflarestream.com/4e9e51704d9c4902a288c80153f31317/iframe"}},
+  { "id": 16, "name":"Seller16","handle":"@seller16","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":6789,"category":"Electro","featuredProduct":{"name":"Product F","price":350},"player":{"embed_type":"mux","embed_src":"https://stream.mux.com/v69RSHhFelSm4701prP29d02V8A01l01c1g/low.m3u8"}},
+  { "id": 17, "name":"Seller17","handle":"@seller17","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":7890,"category":"Moda","featuredProduct":{"name":"Product G","price":400},"player":{"embed_type":"iframe","embed_src":"https://customer-7z5h3j55w144t2x2.cloudflarestream.com/4e9e51704d9c4902a288c80153f31317/iframe"}},
+  { "id": 18, "name":"Seller18","handle":"@seller18","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":8901,"category":"Hogar","featuredProduct":{"name":"Product H","price":450},"player":{"embed_type":"mux","embed_src":"https://stream.mux.com/v69RSHhFelSm4701prP29d02V8A01l01c1g/low.m3u8"}},
+  { "id": 19, "name":"Seller19","handle":"@seller19","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":9012,"category":"Deportes","featuredProduct":{"name":"Product I","price":500},"player":{"embed_type":"iframe","embed_src":"https://customer-7z5h3j55w144t2x2.cloudflarestream.com/4e9e51704d9c4902a288c80153f31317/iframe"}},
+  { "id": 20, "name":"Seller20","handle":"@seller20","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":1023,"category":"Belleza","featuredProduct":{"name":"Product J","price":550},"player":{"embed_type":"mux","embed_src":"https://stream.mux.com/v69RSHhFelSm4701prP29d02V8A01l01c1g/low.m3u8"}},
+  { "id": 21, "name":"Seller21","handle":"@seller21","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":2134,"category":"Electro","featuredProduct":{"name":"Product K","price":600},"player":{"embed_type":"iframe","embed_src":"https://customer-7z5h3j55w144t2x2.cloudflarestream.com/4e9e51704d9c4902a288c80153f31317/iframe"}},
+  { "id": 22, "name":"Seller22","handle":"@seller22","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":3245,"category":"Moda","featuredProduct":{"name":"Product L","price":650},"player":{"embed_type":"mux","embed_src":"https://stream.mux.com/v69RSHhFelSm4701prP29d02V8A01l01c1g/low.m3u8"}},
+  { "id": 23, "name":"Seller23","handle":"@seller23","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":4356,"category":"Hogar","featuredProduct":{"name":"Product M","price":700},"player":{"embed_type":"iframe","embed_src":"https://customer-7z5h3j55w144t2x2.cloudflarestream.com/4e9e51704d9c4902a288c80153f31317/iframe"}},
+  { "id": 24, "name":"Seller24","handle":"@seller24","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":5467,"category":"Deportes","featuredProduct":{"name":"Product N","price":750},"player":{"embed_type":"mux","embed_src":"https://stream.mux.com/v69RSHhFelSm4701prP29d02V8A01l01c1g/low.m3u8"}},
+  { "id": 25, "name":"Seller25","handle":"@seller25","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":6578,"category":"Belleza","featuredProduct":{"name":"Product O","price":800},"player":{"embed_type":"iframe","embed_src":"https://customer-7z5h3j55w144t2x2.cloudflarestream.com/4e9e51704d9c4902a288c80153f31317/iframe"}},
+  { "id": 26, "name":"Seller26","handle":"@seller26","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":7689,"category":"Electro","featuredProduct":{"name":"Product P","price":850},"player":{"embed_type":"mux","embed_src":"https://stream.mux.com/v69RSHhFelSm4701prP29d02V8A01l01c1g/low.m3u8"}},
+  { "id": 27, "name":"Seller27","handle":"@seller27","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":8790,"category":"Moda","featuredProduct":{"name":"Product Q","price":900},"player":{"embed_type":"iframe","embed_src":"https://customer-7z5h3j55w144t2x2.cloudflarestream.com/4e9e51704d9c4902a288c80153f31317/iframe"}},
+  { "id": 28, "name":"Seller28","handle":"@seller28","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":9801,"category":"Hogar","featuredProduct":{"name":"Product R","price":950},"player":{"embed_type":"mux","embed_src":"https://stream.mux.com/v69RSHhFelSm4701prP29d02V8A01l01c1g/low.m3u8"}},
+  { "id": 29, "name":"Seller29","handle":"@seller29","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":1912,"category":"Deportes","featuredProduct":{"name":"Product S","price":1000},"player":{"embed_type":"iframe","embed_src":"https://customer-7z5h3j55w144t2x2.cloudflarestream.com/4e9e51704d9c4902a288c80153f31317/iframe"}},
+  { "id": 30, "name":"Seller30","handle":"@seller30","avatar":"https://images.unsplash.com/photo-1553728440-c29442731627","thumbnail":"https://images.unsplash.com/photo-1648554090883-d23dbcf203a1","viewers":2023,"category":"Belleza","featuredProduct":{"name":"Product T","price":1050},"player":{"embed_type":"mux","embed_src":"https://stream.mux.com/v69RSHhFelSm4701prP29d02V8A01l01c1g/low.m3u8"}}
+]
