@@ -6,53 +6,47 @@
 @layer base {
   :root {
     --background: hsl(0 0% 100%);
-    --foreground: hsl(222.2 47.4% 11.2%);
+    --foreground: hsl(224 71% 4%);
     --card: hsl(0 0% 100%);
-    --card-foreground: hsl(222.2 47.4% 11.2%);
+    --card-foreground: hsl(224 71% 4%);
     --popover: hsl(0 0% 100%);
-    --popover-foreground: hsl(222.2 47.4% 11.2%);
-    --primary: hsl(222.2 47.4% 11.2%);
+    --popover-foreground: hsl(224 71% 4%);
+    --primary: hsl(217 91% 60%);
     --primary-foreground: hsl(210 40% 98%);
-    --secondary: hsl(330 80% 50%);
-    --secondary-foreground: hsl(210 40% 98%);
+    --secondary: hsl(210 40% 96.1%);
+    --secondary-foreground: hsl(222.2 47.4% 11.2%);
     --muted: hsl(210 40% 96.1%);
     --muted-foreground: hsl(215.4 16.3% 46.9%);
-    --accent: hsl(260 70% 50%);
+    --accent: hsl(217 91% 60%);
     --accent-foreground: hsl(210 40% 98%);
     --destructive: hsl(0 84.2% 60.2%);
     --destructive-foreground: hsl(210 40% 98%);
     --border: hsl(214.3 31.8% 91.4%);
     --input: hsl(214.3 31.8% 91.4%);
-    --ring: hsl(260 70% 50%);
-    --radius: 0.75rem;
-
-    --sm-pink: #FF007F;
-    --sm-violet: #8A2BE2;
-    --sm-orange: #FF4500;
-    --sm-grad: linear-gradient(90deg, var(--sm-pink), var(--sm-violet), var(--sm-orange));
-    --sm-grad-45: linear-gradient(45deg, var(--sm-pink), var(--sm-violet), var(--sm-orange));
+    --ring: hsl(217 91% 60%);
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background: hsl(222.2 47.4% 11.2%);
+    --background: hsl(224 71% 4%);
     --foreground: hsl(210 40% 98%);
     --card: hsl(222.2 47.4% 11.2%);
     --card-foreground: hsl(210 40% 98%);
     --popover: hsl(222.2 47.4% 11.2%);
     --popover-foreground: hsl(210 40% 98%);
-    --primary: hsl(210 40% 98%);
-    --primary-foreground: hsl(222.2 47.4% 11.2%);
-    --secondary: hsl(330 80% 50%);
+    --primary: hsl(217 91% 60%);
+    --primary-foreground: hsl(210 40% 98%);
+    --secondary: hsl(222.2 47.4% 11.2%);
     --secondary-foreground: hsl(210 40% 98%);
     --muted: hsl(217.2 32.6% 17.5%);
     --muted-foreground: hsl(215 20.2% 65.1%);
-    --accent: hsl(260 70% 60%);
+    --accent: hsl(217 91% 60%);
     --accent-foreground: hsl(210 40% 98%);
     --destructive: hsl(0 62.8% 30.6%);
     --destructive-foreground: hsl(210 40% 98%);
     --border: hsl(217.2 32.6% 17.5%);
     --input: hsl(217.2 32.6% 17.5%);
-    --ring: hsl(260 70% 60%);
+    --ring: hsl(217 91% 60%);
   }
 }
 
@@ -63,6 +57,13 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .dark body {
+    background-color: hsl(224 71% 8%);
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2IiBoZWlnaHQ9IjYiIHZpZXdCb3g9IjAgMCA2IDYiPgogIDxyZWN0IHdpZHRoPSI2IiBoZWlnaHQ9IjYiIGZpbGw9IiMxOTE5MjIiLz4KICA8ZyBvcGFjaXR5PSIwLjMiPgogICAgPHBhdGggZD0iTTAtMiA3LDUgTS0xLDQgOCwzIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPC9nPgo8L3N2Zz4=');
+    background-repeat: repeat;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -72,11 +73,10 @@
 
 @layer components {
   .btn-primary {
-    background-image: var(--sm-grad);
-    @apply text-white;
+    @apply bg-primary text-primary-foreground;
   }
   .btn-primary:hover {
-    filter: brightness(1.1);
+    @apply bg-primary/90;
   }
   
   .card {

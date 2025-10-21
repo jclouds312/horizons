@@ -11,13 +11,13 @@ const Header = ({ cartCount }) => {
   const { theme, toggleTheme } = useTheme();
 
   const navLinkClass = ({ isActive }) => 
-    `text-sm font-medium transition-colors ${isActive ? 'text-primary' : 'text-foreground/60 hover:text-foreground/80'}`;
+    `text-sm font-medium transition-colors px-3 py-2 rounded-md ${isActive ? 'bg-muted text-primary' : 'text-foreground/60 hover:bg-muted hover:text-foreground/80'}`;
   
   const mobileNavLinkClass = ({ isActive }) => 
     `block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActive ? 'bg-muted text-primary' : 'hover:bg-muted hover:text-foreground'}`;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
@@ -37,7 +37,7 @@ const Header = ({ cartCount }) => {
           </div>
 
           {/* Nav Links (Desktop) */}
-          <nav className="hidden lg:flex space-x-6 items-center">
+          <nav className="hidden lg:flex space-x-2 items-center">
             <NavLink to="/" className={navLinkClass}>Inicio</NavLink>
             <NavLink to="/categories" className={navLinkClass}>Categorías</NavLink>
             <NavLink to="/sellers" className={navLinkClass}>Vendedores</NavLink>

@@ -4,14 +4,11 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import HeroSlider from '@/components/HeroSlider';
 import LiveCarousel from '@/components/LiveCarousel';
-import ChatAI from '@/components/ChatAI';
 import PremiumAds from '@/components/PremiumAds';
-import SellerCTA from '@/components/SellerCTA';
+import PublishCTA from '@/components/PublishCTA';
 import PageWrapper from '@/components/PageWrapper';
 import ProductCard from '@/components/ProductCard';
 import FAQ from '@/components/FAQ';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 
 const HomePage = ({ categorizedData, sellers, onAddToCart }) => {
   const { categories } = categorizedData;
@@ -28,19 +25,6 @@ const HomePage = ({ categorizedData, sellers, onAddToCart }) => {
       </a>
 
       <HeroSlider />
-      
-      <div className="my-12 text-center">
-        <Link to="/categories">
-          <Button size="lg" className="mr-4">
-            Explorar Marketplace <ArrowRight className="ml-2"/>
-          </Button>
-        </Link>
-        <Link to="/user?action=publish">
-          <Button size="lg" variant="secondary">
-            Publicar Producto
-          </Button>
-        </Link>
-      </div>
 
       <div className="my-8">
         <PremiumAds />
@@ -54,8 +38,8 @@ const HomePage = ({ categorizedData, sellers, onAddToCart }) => {
             category.items.length > 0 && (
               <section key={category.slug} id={category.slug} className="py-12">
                 <div className="flex justify-between items-baseline mb-6">
-                  <h2 className="text-3xl font-bold">{category.name}</h2>
-                  <Link to={`/categories#${category.slug}`} className="text-sm font-medium text-primary hover:underline">
+                  <h2 className="text-3xl font-bold text-foreground">{category.name}</h2>
+                  <Link to={`/categories#${category.slug}`} className="text-sm font-medium text-primary hover:text-primary/90">
                     Ver todos ({category.count})
                   </Link>
                 </div>
@@ -74,10 +58,8 @@ const HomePage = ({ categorizedData, sellers, onAddToCart }) => {
         )}
       </main>
 
+      <PublishCTA />
       <FAQ />
-      <ChatAI />
-      <PremiumAds />
-      <SellerCTA />
     </PageWrapper>
   );
 };

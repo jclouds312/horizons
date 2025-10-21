@@ -16,13 +16,13 @@ const CategoriesPage = ({ categorizedData, onAddToCart }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="py-8 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
             Categorías de Productos
           </h1>
-          <p className="mt-4 text-xl text-gray-500">
+          <p className="mt-4 text-xl text-muted-foreground">
             Encuentra exactamente lo que buscas en nuestras {categories.length} categorías.
           </p>
-          <div className="mt-6 w-48 h-1.5 mx-auto brand-divider"></div>
+          <hr className="mt-6 w-48 mx-auto" />
         </header>
 
         {categories && categories.length > 0 ? (
@@ -30,8 +30,8 @@ const CategoriesPage = ({ categorizedData, onAddToCart }) => {
             category.items.length > 0 && (
               <section key={category.slug} id={category.slug} className="py-12">
                 <div className="flex justify-between items-baseline mb-6">
-                  <h2 className="text-3xl font-bold text-gray-900">{category.name}</h2>
-                  <Link to={`/categories#${category.slug}`} className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                  <h2 className="text-3xl font-bold text-foreground">{category.name}</h2>
+                  <Link to={`/categories#${category.slug}`} className="text-sm font-medium text-primary hover:text-primary/90">
                     Ver todos ({category.count})
                   </Link>
                 </div>
@@ -45,7 +45,7 @@ const CategoriesPage = ({ categorizedData, onAddToCart }) => {
           ))
         ) : (
           <div className="text-center py-16">
-            <p className="text-gray-500">Cargando categorías y productos...</p>
+            <p className="text-muted-foreground">Cargando categorías y productos...</p>
           </div>
         )}
       </div>
