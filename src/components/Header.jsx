@@ -4,9 +4,11 @@ import { Link, NavLink } from 'react-router-dom';
 import { Search, ShoppingCart, Menu, X, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTheme } from '@/hooks/useTheme';
 
-const Header = ({ cartCount, toggleTheme, theme }) => {
+const Header = ({ cartCount }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const navLinkClass = ({ isActive }) => 
     `text-sm font-medium transition-colors ${isActive ? 'text-primary' : 'text-foreground/60 hover:text-foreground/80'}`;
