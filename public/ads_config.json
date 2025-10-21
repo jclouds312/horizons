@@ -1,0 +1,97 @@
+{
+  "slots": {
+    "ad-hero": {
+      "enabled": false,
+      "type": "image",
+      "rotation": [
+        {
+          "id": "hero-ad-1",
+          "src": "/assets/ad_hero_publicite.png",
+          "alt": "Anuncio principal: Descubre las mejores ofertas",
+          "href": "#",
+          "ratio": "16/9"
+        }
+      ]
+    },
+    "ad-slot-left": {
+      "enabled": false,
+      "type": "image",
+      "items": [
+        {
+          "id": "rail-ad-left-1",
+          "src": "/assets/ad_rail_300x600.png",
+          "alt": "Anuncio lateral: Productos destacados",
+          "href": "#",
+          "ratio": "1/2"
+        }
+      ]
+    },
+    "ad-slot-right": {
+      "enabled": false,
+      "type": "image",
+      "items": [
+        {
+          "id": "rail-ad-right-1",
+          "src": "/assets/ad_rail_300x250.png",
+          "alt": "Anuncio lateral: Novedades",
+          "href": "#",
+          "ratio": "1/1"
+        }
+      ]
+    },
+    "ad-infeed-live": {
+      "enabled": false,
+      "type": "image",
+      "every": 3,
+      "items": [
+        {
+          "id": "infeed-live-ad-1",
+          "src": "/assets/ad_infeed_live_publicite.png",
+          "alt": "Anuncio en vivo: No te pierdas las ofertas",
+          "href": "#",
+          "ratio": "16/9"
+        }
+      ]
+    },
+    "ad-infeed-catalog": {
+      "enabled": false,
+      "type": "image",
+      "every": 5,
+      "items": [
+        {
+          "id": "infeed-catalog-ad-1",
+          "src": "/assets/ad_infeed_catalog_publicite.png",
+          "alt": "Anuncio en catálogo: Productos exclusivos",
+          "href": "#",
+          "ratio": "1/1"
+        }
+      ]
+    },
+    "ad-prefooter": {
+      "enabled": false,
+      "type": "image",
+      "items": [
+        {
+          "id": "prefooter-ad-1",
+          "src": "/assets/ad_prefooter_publicite.png",
+          "alt": "Anuncio pre-footer: Últimas tendencias",
+          "href": "#",
+          "ratio": "4/1"
+        }
+      ]
+    },
+    "ad-sticky-footer": {
+      "enabled": false,
+      "type": "image",
+      "items": [
+        {
+          "id": "sticky-footer-ad-1",
+          "src": "/assets/ad_sticky_footer_publicite.png",
+          "alt": "Anuncio fijo: Descarga nuestra app",
+          "href": "#",
+          "ratio": "4/1"
+        }
+      ]
+    }
+  }
+}
