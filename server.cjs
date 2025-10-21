@@ -6,6 +6,7 @@ const { notFound, errorHandler } = require('./middleware/errorMiddleware.cjs');
 const productRoutes = require('./routes/productRoutes.cjs');
 const userRoutes = require('./routes/userRoutes.cjs');
 const sellerRoutes = require('./routes/sellerRoutes.cjs');
+const authRoutes = require('./routes/auth.cjs');
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/sellers', sellerRoutes);
+app.use('/api/auth', authRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

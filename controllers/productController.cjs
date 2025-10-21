@@ -1,17 +1,11 @@
 const asyncHandler = require('express-async-handler');
 const Product = require('../models/Product.cjs');
 
-// @desc    Fetch all products
-// @route   GET /api/products
-// @access  Public
 const getProducts = asyncHandler(async (req, res) => {
   const products = await Product.find({});
   res.json(products);
 });
 
-// @desc    Fetch single product
-// @route   GET /api/products/:id
-// @access  Public
 const getProductById = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
 
@@ -19,75 +13,69 @@ const getProductById = asyncHandler(async (req, res) => {
     res.json(product);
   } else {
     res.status(404);
-    throw new Error('Product not found');
+    throw new Error('Producto no encontrado');
   }
 });
 
-// @desc    Create a product
-// @route   POST /api/products
-// @access  Private/Admin
 const createProduct = asyncHandler(async (req, res) => {
-  const { name, image, brand, category, description, price, countInStock } = req.body;
-
   const product = new Product({
-    name,
-    image,
-    brand,
-    category,
-    description,
-    price,
-    countInStock,
     user: req.user._id,
+    name: 'Producto de muestra',
+    price: 0,
+    image: '/images/sample.jpg',
+    brand: 'Marca de muestra',
+    category: 'Categoría de muestra',
+    countInStock: 0,
+    numReviews: 0,
+    description: 'Descripción de muestra',
   });
 
   const createdProduct = await product.save();
   res.status(201).json(createdProduct);
 });
 
-// @desc    Update a product
-// @route   PUT /api/products/:id
-// @access  Private/Admin
 const updateProduct = asyncHandler(async (req, res) => {
-  const { name, image, brand, category, description, price, countInStock } = req.body;
+  const { name, price, description, image, brand, category, countInStock } = req.body;
 
   const product = await Product.findById(req.params.id);
 
   if (product) {
-    product.name = name;
-    product.image = image;
-    product.brand = brand;
-    product.category = category;
-    product.description = description;
-    product.price = price;
-    product.countInStock = countInStock;
+    if (product.user.toString() !== req.user._id.toString()) {
+      res.status(401);
+      throw new Error('No autorizado para editar este producto');
+    }
+
+    product.name = name || product.name;
+    product.price = price || product.price;
+    product.description = description || product.description;
+    product.image = image || product.image;
+    product.brand = brand || product.brand;
+    product.category = category || product.category;
+    product.countInStock = countInStock || product.countInStock;
 
     const updatedProduct = await product.save();
     res.json(updatedProduct);
   } else {
     res.status(404);
-    throw new Error('Product not found');
+    throw new Error('Producto no encontrado');
   }
 });
 
-// @desc    Delete a product
-// @route   DELETE /api/products/:id
-// @access  Private/Admin
 const deleteProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
 
   if (product) {
+    if (product.user.toString() !== req.user._id.toString()) {
+      res.status(401);
+      throw new Error('No autorizado para eliminar este producto');
+    }
+
     await product.remove();
-    res.json({ message: 'Product removed' });
+    res.json({ message: 'Producto eliminado' });
   } else {
     res.status(404);
-    throw new Error('Product not found');
+    throw new Error('Producto no encontrado');
   }
 });
 
-module.exports = {
-  getProducts,
-  getProductById,
-  createProduct,
-  updateProduct,
-  deleteProduct,
-};
+module.exports = { getProducts, getProductById, createProduct, updateProduct, deleteProduct };

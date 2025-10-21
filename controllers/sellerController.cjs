@@ -1,52 +1,43 @@
 const asyncHandler = require('express-async-handler');
 const Seller = require('../models/Seller.cjs');
+const User = require('../models/User.cjs');
 
-// @desc    Create a new seller profile
-// @route   POST /api/sellers
-// @access  Private
-const createSeller = asyncHandler(async (req, res) => {
+const createSellerProfile = asyncHandler(async (req, res) => {
   const { shopName, shopDescription } = req.body;
 
-  const seller = new Seller({
-    user: req.user._id,
-    shopName,
-    shopDescription,
-  });
+  let seller = await Seller.findOne({ user: req.user._id });
 
-  const createdSeller = await seller.save();
-  res.status(201).json(createdSeller);
+  if (seller) {
+    seller.shopName = shopName || seller.shopName;
+    seller.shopDescription = shopDescription || seller.shopDescription;
+  } else {
+    seller = new Seller({
+      user: req.user._id,
+      shopName,
+      shopDescription,
+    });
+  }
+
+  const savedSeller = await seller.save();
+  await User.findByIdAndUpdate(req.user._id, { seller: savedSeller._id });
+
+  res.status(201).json(savedSeller);
 });
 
-// @desc    Get seller profile
-// @route   GET /api/sellers/:id
-// @access  Private
-const getSeller = asyncHandler(async (req, res) => {
-  const seller = await Seller.findById(req.params.id).populate('user', 'name email');
+const getSellers = asyncHandler(async (req, res) => {
+  const sellers = await Seller.find({}).populate('user', ['name', 'email']);
+  res.json(sellers);
+});
+
+const getSellerProfileByUserId = asyncHandler(async (req, res) => {
+  const seller = await Seller.findOne({ user: req.params.userId }).populate('user', ['name', 'email']);
 
   if (seller) {
     res.json(seller);
   } else {
     res.status(404);
-    throw new Error('Seller not found');
+    throw new Error('Perfil de vendedor no encontrado');
   }
 });
 
-// @desc    Update seller profile
-// @route   PUT /api/sellers/:id
-// @access  Private
-const updateSeller = asyncHandler(async (req, res) => {
-  const seller = await Seller.findById(req.params.id);
-
-  if (seller) {
-    seller.shopName = req.body.shopName || seller.shopName;
-    seller.shopDescription = req.body.shopDescription || seller.shopDescription;
-
-    const updatedSeller = await seller.save();
-    res.json(updatedSeller);
-  } else {
-    res.status(404);
-    throw new Error('Seller not found');
-  }
-});
-
-module.exports = { createSeller, getSeller, updateSeller };
+module.exports = { createSellerProfile, getSellers, getSellerProfileByUserId };

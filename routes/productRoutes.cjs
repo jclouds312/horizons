@@ -5,11 +5,15 @@ const {
   getProductById,
   createProduct,
   updateProduct,
-  deleteProduct
+  deleteProduct,
 } = require('../controllers/productController.cjs');
 const { protect } = require('../middleware/authMiddleware.cjs');
 
 router.route('/').get(getProducts).post(protect, createProduct);
-router.route('/:id').get(getProductById).put(protect, updateProduct).delete(protect, deleteProduct);
+router
+  .route('/:id')
+  .get(getProductById)
+  .put(protect, updateProduct)
+  .delete(protect, deleteProduct);
 
 module.exports = router;

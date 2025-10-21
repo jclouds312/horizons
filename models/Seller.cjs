@@ -5,7 +5,7 @@ const sellerSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: 'User',
-    unique: true // Un usuario solo puede tener un perfil de vendedor
+    unique: true
   },
   shopName: {
     type: String,
@@ -16,7 +16,6 @@ const sellerSchema = new mongoose.Schema({
     type: String,
     required: [true, 'La descripción de la tienda es obligatoria.']
   },
-  // Aquí se podrían añadir más campos, como la dirección de la tienda, etc.
 }, {
   timestamps: true
 });

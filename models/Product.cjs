@@ -4,7 +4,7 @@ const productSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'User' // Referencia al usuario que creó el producto (vendedor)
+    ref: 'User'
   },
   name: {
     type: String,
@@ -48,7 +48,7 @@ const productSchema = new mongoose.Schema({
     default: 0
   },
 }, {
-  timestamps: true // Añade automáticamente createdAt y updatedAt
+  timestamps: true
 });
 
 const Product = mongoose.model('Product', productSchema);

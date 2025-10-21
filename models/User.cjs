@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -11,7 +11,6 @@ const userSchema = new mongoose.Schema({
     required: [true, 'El email es obligatorio.'],
     unique: true,
     lowercase: true,
-    // Regex para validar el formato del email
     match: [/\S+@\S+\.\S+/, 'Por favor, utiliza un formato de email válido.']
   },
   password: {
@@ -24,12 +23,10 @@ const userSchema = new mongoose.Schema({
     ref: 'Seller'
   }
 }, {
-  timestamps: true // Añade automáticamente createdAt y updatedAt
+  timestamps: true
 });
 
-// Middleware para hashear la contraseña antes de guardar el documento
 userSchema.pre('save', async function(next) {
-  // Solo hashear la contraseña si ha sido modificada (o es nueva)
   if (!this.isModified('password')) return next();
 
   try {
@@ -41,7 +38,6 @@ userSchema.pre('save', async function(next) {
   }
 });
 
-// Método para comparar la contraseña ingresada con la hasheada en la BD
 userSchema.methods.comparePassword = async function(candidatePassword) {
   return await bcrypt.compare(candidatePassword, this.password);
 };
